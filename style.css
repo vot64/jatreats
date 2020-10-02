@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+}
+
+#site_wrap {
+    background-color: white;
+    height:100vh;
+    display:grid;
+    grid-template-columns: 
+        1fr 
+        repeat(4,minmax(0,272px)) 
+        1fr
+        ;
+    grid-gap:0px;
+    grid-template-rows: 
+    104px
+    215px
+    min-content
+    min-content
+    1fr
+    ;
+    grid-template-areas: 
+    ". header header header header ."
+    "featured_header featured_header featured_header featured_header featured_header featured_header"
+    ". featured_main featured_main featured_main featured_profile ."
+    ". content content content content ."
+    "footer footer footer footer footer footer"
+   
+    
+}
+
+.header {
+    background-color:white;
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.header .logo {
+    width:150px;
+}
+.header .nav{
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.header .nav a {
+    text-decoration: none;
+    border: 2px solid #B35BD9;
+    border-radius: 50em;
+    color: #B35BD9;
+    padding:15px 52px;
+    margin: 0 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.header .nav a:hover, .header .nav .active {
+    background-color: #B35BD9;
+    color: white;
+}
+.featured_header {
+    background-image: url('images/Jacaranda@2x.png');
+    grid-area: featured_header;
+    background-size: cover;
+}
+
+.featured_main {
+    
+    grid-area: featured_main;
+}
+
+.featured_main h1 {
+    color: #707070;
+}
+
+.featured_main p {
+    color: #707070;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #93A605;
+    border: 2px solid #B35BD9;
+    border-radius: 50em;
+    color: #707070;
+    padding:15px 52px;
+    margin: 0 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    float:right;
+
+}
+
+
+.featured_profile {
+    padding:2em 1em;
+    grid-area: featured_profile;
+}
+
+.featured_profile img {
+    max-width: 100%;
+    height: auto;
+}
+.content {
+    
+    grid-area: content;
+    
+
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer {
+    background-color: gray;
+    color: white;
+    grid-area: footer;
+    text-align: center;
+    padding-top: em;
+
+}
+
+@media screen and (max-width:480px) {
+    #site_wrap {
+        grid-template-rows: 
+        min-content
+        215px
+        min-content
+        min-content
+        1fr
+        
+        grid-template-areas: 
+        "header header header header header header"
+        "featured_header featured_header featured_header featured_header featured_header featured_header"
+        "featured_main featured_main featured_main featured_main featured_main"
+        "content content content content content content"
+        "footer footer footer footer footer footer"
+    }
+
+    .featured_profile {
+        display: none;
+    }
+
+    .header .nav{
+        list-style: none;
+        padding: 0;
+        display: flexbox;
+        flex-direction: column;
+
+    }
+    .header .nav a  {
+        margin: .5em;
+    }
+}
